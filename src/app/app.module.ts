@@ -12,6 +12,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {ChatComponent} from './chat/chat.component';
 import {FileUploadModule, FileUploadService} from "angular-sd-file-upload";
 import {HttpClientModule} from "@angular/common/http";
+import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     VideoGalleryComponent,
     AudioListComponent,
     DashboardComponent,
-    ChatComponent
+    ChatComponent,
+    VideoplayerComponent,
   ],
   imports: [
     BrowserModule,

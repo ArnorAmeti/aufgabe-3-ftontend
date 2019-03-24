@@ -1,7 +1,7 @@
 <div class="images">
   <div class="image-wrapper">
     <h3>Datei hochladen</h3>
-    <sd-single-file-upload [url]="'SERVER-URL'"
+    <sd-single-file-upload [url]="environment.url + '/api/files/optimize'"
                            [description]="'Beschreibung'"
                            [title]="'Titel'">
     </sd-single-file-upload>
@@ -11,7 +11,7 @@
     <sd-multiple-file-upload
       [description]="'Beschreibung'"
       [title]="'Titel'"
-      [url]="'SERVER-URL'"
+      [url]="environment.url + '/api/files/optimize'"
     ></sd-multiple-file-upload>
   </div>
 </div>

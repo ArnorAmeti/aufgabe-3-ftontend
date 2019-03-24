@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-image-gallery',
@@ -8,8 +9,12 @@ import {Component, OnInit} from '@angular/core';
 export class ImageGalleryComponent implements OnInit {
   images: string[] = [];
 
-  constructor() {
-    this.images.push("https://wallpaperplay.com/walls/full/2/1/1/136291.jpg");
+  constructor(private http: HttpClient) {
+    this.http.get<{ files: string[] }>('http://localhost:4000/api/files').subscribe((answer) => {
+      answer.files.forEach(file => {
+        this.images.push('/static/' + file);
+      });
+    });
   }
 
   ngOnInit() {
